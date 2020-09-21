@@ -53,7 +53,13 @@
   <ItemGroup>
     <Compile Include="DAL\Contexto.cs" />
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\CamposComunes.cs" />
+    <Compile Include="Models\CategoriasTrabajos.cs" />
+    <Compile Include="Models\TipoContrato.cs" />
+    <Compile Include="Models\Trabajos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Seeders\CategoriasTrabajosSeeder.cs" />
+    <Compile Include="Seeders\TipoContratoSeeder.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
