@@ -21,6 +21,9 @@ namespace Herencia_TablaPorJerarquia.DAL
         {
             modelBuilder.Configurations.Add(new EmpleadoMap());
 
+            modelBuilder.Configurations.Add(new EmpleadoInternoMap());
+            modelBuilder.Configurations.Add(new EmpleadoExternoMap());
+
             base.OnModelCreating(modelBuilder);
         }
     }
@@ -38,14 +41,27 @@ namespace Herencia_TablaPorJerarquia.DAL
             Property(x => x.Region).HasMaxLength(15);
             Property(x => x.CodigoPostal).HasMaxLength(10);
             Property(x => x.Pais).HasMaxLength(15);
-
-            Map<EmpleadoInterno>(x => x.Requires("Type")
-                                        .HasValue("I")
-                                        .HasColumnType("char")
-                                        .HasMaxLength(1));
-
-            Map<EmpleadoExterno>(x => x.Requires("Type")
-                                        .HasValue("E"));
         }
     }
+
+    public class EmpleadoInternoMap : EntityTypeConfiguration<EmpleadoInterno>
+    {
+        public EmpleadoInternoMap()
+        {
+            ToTable("EmpleadoInterno");
+        }
+    }
+
+    public class EmpleadoExternoMap : EntityTypeConfiguration<EmpleadoExterno>
+    {
+        public EmpleadoExternoMap()
+        {
+            ToTable("EmpleadoExterno");
+
+            Property(x => x.NombreConsultor).IsRequired()
+                                           .HasColumnType("varchar")
+                                           .HasMaxLength(100);
+        }
+    }
+
 }

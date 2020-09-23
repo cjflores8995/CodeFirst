@@ -58,6 +58,10 @@
     <Compile Include="Migrations\202009230240032_MigracionEmpleados.designer.cs">
       <DependentUpon>202009230240032_MigracionEmpleados.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202009230256126_Empeados-migrcion.cs" />
+    <Compile Include="Migrations\202009230256126_Empeados-migrcion.designer.cs">
+      <DependentUpon>202009230256126_Empeados-migrcion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Empleado.cs" />
     <Compile Include="Models\EmpleadoExterno.cs" />
@@ -72,6 +76,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202009230240032_MigracionEmpleados.resx">
       <DependentUpon>202009230240032_MigracionEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009230256126_Empeados-migrcion.resx">
+      <DependentUpon>202009230256126_Empeados-migrcion.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
