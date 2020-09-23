@@ -19,8 +19,6 @@ namespace Herencia_TablaPorJerarquia.DAL
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Configurations.Add(new EmpleadoMap());
-
             modelBuilder.Configurations.Add(new EmpleadoInternoMap());
             modelBuilder.Configurations.Add(new EmpleadoExternoMap());
 
@@ -28,27 +26,18 @@ namespace Herencia_TablaPorJerarquia.DAL
         }
     }
 
-    public class EmpleadoMap: EntityTypeConfiguration<Empleado>
-    {
-        public EmpleadoMap()
-        {
-            HasKey(x => x.Id);
-            Property(x => x.Apellido).HasMaxLength(20).IsRequired();
-            Property(x => x.Nombre).HasMaxLength(20).IsRequired();
-
-            Property(x => x.Direccion).HasMaxLength(60);
-            Property(x => x.Ciudad).HasMaxLength(15);
-            Property(x => x.Region).HasMaxLength(15);
-            Property(x => x.CodigoPostal).HasMaxLength(10);
-            Property(x => x.Pais).HasMaxLength(15);
-        }
-    }
 
     public class EmpleadoInternoMap : EntityTypeConfiguration<EmpleadoInterno>
     {
         public EmpleadoInternoMap()
         {
-            ToTable("EmpleadoInterno");
+
+            Map(x =>
+            {
+                x.MapInheritedProperties();
+                x.ToTable("EmpleadoInterno");
+            });
+
         }
     }
 
@@ -56,7 +45,11 @@ namespace Herencia_TablaPorJerarquia.DAL
     {
         public EmpleadoExternoMap()
         {
-            ToTable("EmpleadoExterno");
+            Map(x =>
+            {
+                x.MapInheritedProperties();
+                x.ToTable("EmpleadoExterno");
+            });
 
             Property(x => x.NombreConsultor).IsRequired()
                                            .HasColumnType("varchar")

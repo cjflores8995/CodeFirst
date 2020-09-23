@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\Da
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppConsola", "AppConsola\AppConsola.csproj", "{7FFCBC72-B62B-4589-B722-999FC0800CFD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Herencia-TablaPorTipo", "Herencia-TablaPorJerarquia\Herencia-TablaPorTipo.csproj", "{9594297A-FE6E-4C3E-95F9-68D4AD942EF1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Herencia-TablaPorTipoConcreto", "Herencia-TablaPorJerarquia\Herencia-TablaPorTipoConcreto.csproj", "{9594297A-FE6E-4C3E-95F9-68D4AD942EF1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
